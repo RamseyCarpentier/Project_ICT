@@ -1,0 +1,60 @@
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project_MarkupCompile.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project_MarkupCompile.lref
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\project.exe
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\project.deps.json
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\project.runtimeconfig.json
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\project.pdb
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.g.resources
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.AssemblyInfoInputs.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.AssemblyInfo.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.csproj.CoreCompileInputs.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\refint\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.pdb
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.genruntimeconfig.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\ref\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.csproj.AssemblyReference.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project\obj\Debug\net6.0-windows\project.csproj.CopyComplete
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.csproj.AssemblyReference.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project_MarkupCompile.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project_MarkupCompile.lref
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\refint\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.pdb
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\project.exe
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\project.deps.json
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\project.runtimeconfig.json
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\project.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\project.pdb
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.IO.Ports.dll
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.g.resources
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.AssemblyInfoInputs.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.AssemblyInfo.cs
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.csproj.CoreCompileInputs.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.csproj.CopyComplete
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\project.genruntimeconfig.cache
+C:\Users\ramse\OneDrive\Bureaublad\Project\project WPF\obj\Debug\net6.0-windows\ref\project.dll

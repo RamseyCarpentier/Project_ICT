@@ -1,0 +1,201 @@
+﻿<Window x:Class="project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="780" Width="1200" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid Background="#080808">
+
+
+
+        <Canvas Name="canvas_load" Background="Transparent"  Visibility="Collapsed">
+            <ProgressBar Height="35" Maximum="100" Minimum="0" Name="prsbar" Foreground="#3AA1DB" Canvas.Left="315" Canvas.Top="462" Width="570">
+                <ProgressBar.Effect>
+                    <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <Label Name="lbl_prsbr" Foreground="#3AA1DB" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ROG Fonts" Canvas.Left="570" Canvas.Top="531">0%</Label>
+            <Label  Name="lbl_loading" Foreground="#3AA1DB" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="ROG Fonts" Canvas.Left="434" Canvas.Top="347">Loading...</Label>
+        </Canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Canvas Name="canvas_Inloggen" Width="550" Background="#20FFFFFF" Visibility="Collapsed" Margin="325,182,325,176" >
+            <Canvas.Effect>
+                <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
+            </Canvas.Effect>
+
+            <Label Content="Inloggen" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="220" Canvas.Top="37" HorizontalAlignment="Center" VerticalAlignment="Top" ></Label>
+            <TextBox Name="txt_Username" Text="Username" FontSize="18" Background="Transparent" Foreground="LightGray" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"  GotFocus="Username_GotFocus" LostFocus="Username_LostFocus" Canvas.Left="106" Canvas.Top="126" CaretBrush="#445DAD"/>
+            <TextBox Name="txt_Password" Text="Password" FontSize="18" Background="Transparent" Foreground="LightGray" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Center"  GotFocus="txt_Pasword_GotFocus" LostFocus="txt_Pasword_LostFocus" Canvas.Left="106" Canvas.Top="169" CaretBrush="#445DAD" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="106" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Center" Width="350" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="106" Canvas.Top="195" HorizontalAlignment="Left" VerticalAlignment="Center" Width="350" />
+
+            <Button  Background="Transparent" Foreground="DarkGray" Canvas.Left="227" Canvas.Top="280"  HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Cursor="Hand"/>
+
+            <Button  Name="btn_submit" Content="Login"  Foreground="LightGray" Background="#445DAD" FontSize="20" FontFamily="Britannic Bold" Canvas.Left="237" Canvas.Top="257" BorderThickness="1" Height="35" Width="75" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#445DAD" Click="btn_submit_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Label  Content="| Designed by Ramsey Carpentier |" Canvas.Left="157" Canvas.Top="344" Foreground="LightGray" FontFamily="Bernard MT Condensed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="17"></Label>
+
+            <Label  Name="lbl_user_inc" Content="Username is incorect" Canvas.Left="338" Canvas.Top="129" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed"></Label>
+            <Label  Name="lbl_pass_inc" Content="Password is incorect" Canvas.Left="340" Canvas.Top="171" Foreground="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"></Label>
+
+
+
+        </Canvas>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Canvas Name="canvas_Start" Background="Transparent" Visibility="Visible" >
+            <Label Name="lbl_start1" Background="#1A1C29" Height="100" Width="1124" HorizontalAlignment="Left" Canvas.Top="32" VerticalAlignment="Center" Canvas.Left="38">
+                <Label.Effect>
+                    <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
+                </Label.Effect>
+            </Label>
+
+            <Image Name="lbl_start2" Source="/image/profiel_icoon.png" Stretch="Fill" Visibility="Visible" Height ="80" HorizontalAlignment="Left" Canvas.Left="70" Canvas.Top="42" VerticalAlignment="Center" />
+
+            <Label Name="lbl_naam" Background="Transparent" Height="80" Width="500" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="205" Foreground="LightGray" FontSize="34" Canvas.Top="43" VerticalContentAlignment="Center">Name</Label>
+
+            <ComboBox Name="cbxComPorts" Height="42" SelectionChanged="cbxComPorts_SelectionChanged" FontSize="27" VerticalAlignment="Top" HorizontalAlignment="Center" Width="286" Canvas.Left="759" Canvas.Top="62" PreviewMouseDown="ComboBox_PreviewMouseDown"/>
+            <Label Name="lbl_start3" Background="Transparent" Height="80" Width="164" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="600" Foreground="LightGray" FontSize="27" Canvas.Top="42" VerticalContentAlignment="Center">COM-Poort:</Label>
+            <Label Name="lbl_com" Background="Transparent" Height="80"  VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="418" FontSize="30" Canvas.Top="302" VerticalContentAlignment="Center" Foreground="#3AA1DB" Visibility="Collapsed" >!Selecteer een COM-Poort!</Label>
+
+            <Label  Name="lbl_start4" Height="50" Width="50" Foreground="LightGray" Background="Transparent" BorderThickness="0" Content="ℹ️" FontSize="30" Canvas.Left="155" Canvas.Top="58" MouseEnter="Label_MouseEnter"></Label>
+
+            <Button Name="btn_change_icoon" Height="30" Width="30" Foreground="LightGray" Background="Transparent" BorderThickness="0" Content="✏️" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="59" Canvas.Top="92" Click="btn_change_icoon_Click"></Button>
+
+
+
+
+
+
+        </Canvas>
+
+        <Canvas Name="camvas_Cntrols" Visibility="Visible">
+
+            <TextBox Text="Control Panel" FontSize="35" FontFamily="Bodoni MT" FontStyle="Italic" VerticalAlignment="Top" HorizontalAlignment="Center" TextDecorations="Underline" BorderThickness="0" Canvas.Left="160" Canvas.Top="174" Background="Transparent" Foreground="#3AA1DB"/>
+
+            <Label Name="LED1" Content="Led 1" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="207" Canvas.Top="260" Foreground="#3AA1DB"/>
+            <Label Name="LED2" Content="Led 2" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="207" Canvas.Top="300" Foreground="#3AA1DB"/>
+            <Label Name="LED3" Content="Led 3" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="207" Canvas.Top="340" Foreground="#3AA1DB"/>
+            <Label Name="LED4" Content="Led 4" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="207" Canvas.Top="380" Foreground="#3AA1DB"/>
+            <Label Name="LED5" Content="Led 5" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="207" Canvas.Top="420" Foreground="#3AA1DB"/>
+
+            <Slider Name="slider1" Minimum="0" Maximum="1" TickFrequency="1" Height="20" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left" ValueChanged="slider_ValueChanged" Canvas.Left="259" Canvas.Top="268" />
+            <Slider Name="slider2" Minimum="0" Maximum="1" TickFrequency="1" Height="20" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left" ValueChanged="slider_ValueChanged" Canvas.Left="259" Canvas.Top="308"/>
+            <Slider Name="slider3" Minimum="0" Maximum="1" TickFrequency="1" Height="20" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left" ValueChanged="slider_ValueChanged" Canvas.Left="259" Canvas.Top="348"/>
+            <Slider Name="slider4" Minimum="0" Maximum="1" TickFrequency="1" Height="20" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left" ValueChanged="slider_ValueChanged" Canvas.Left="259" Canvas.Top="386"/>
+            <Slider Name="slider5" Minimum="0" Maximum="1" TickFrequency="1" Height="20" Width="82" VerticalAlignment="Top" HorizontalAlignment="Left" ValueChanged="slider_ValueChanged" Canvas.Left="259" Canvas.Top="428"/>
+
+            <Ellipse Name="BOL1r" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Red" Canvas.Left="346" Canvas.Top="265" />
+            <Ellipse Name="BOL2r" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Red" Canvas.Left="346" Canvas.Top="305" />
+            <Ellipse Name="BOL3r" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Red" Canvas.Left="346" Canvas.Top="346" />
+            <Ellipse Name="BOL4r" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Red" Canvas.Left="346" Canvas.Top="383" />
+            <Ellipse Name="BOL5r" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Red" Canvas.Left="346" Canvas.Top="426" />
+
+
+
+            <Ellipse Name="BOL1g" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Green"  Visibility="Collapsed" Canvas.Left="346" Canvas.Top="265"/>
+            <Ellipse Name="BOL2g" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Green"  Visibility="Collapsed" Canvas.Left="346" Canvas.Top="305"/>
+            <Ellipse Name="BOL3g" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Green"  Visibility="Collapsed" Canvas.Left="346" Canvas.Top="346"/>
+            <Ellipse Name="BOL4g" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Green"  Visibility="Collapsed" Canvas.Left="346" Canvas.Top="383"/>
+            <Ellipse Name="BOL5g" Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="Green"  Visibility="Collapsed" Canvas.Left="346" Canvas.Top="426"/>
+
+
+            <Label Content="Knop 1" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="678" Canvas.Top="266" Foreground="#3AA1DB"/>
+            <Label Content="Knop 2" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="743" Canvas.Top="266" Foreground="#3AA1DB"/>
+            <Label Content="Knop 3" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="810" Canvas.Top="266" Foreground="#3AA1DB"/>
+            <Label Content="Knop 4" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="879" Canvas.Top="266" Foreground="#3AA1DB"/>
+
+
+            <Ellipse x:Name="KNOP_1" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="821" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_2" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="689" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_3" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="754" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_4" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="890" Canvas.Top="305"/>
+
+            <Ellipse x:Name="KNOP_3A" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Fill="Yellow" Visibility="Collapsed" Canvas.Left="821" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_1A" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Fill="Yellow" Visibility="Collapsed" Canvas.Left="689" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_2A" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Fill="Yellow" Visibility="Collapsed" Canvas.Left="754" Canvas.Top="305"/>
+            <Ellipse x:Name="KNOP_4A" Height="40" Width="40" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" HorizontalAlignment="Center" Fill="Yellow" Visibility="Collapsed" Canvas.Left="890" Canvas.Top="305"/>
+
+            <Label Content="ADC:" Height="30" Width="62" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Foreground="#3AA1DB" Canvas.Left="689" Canvas.Top="368"/>
+            <Label Name="ADC_Value" Content="...%" Height="30" Width="178" VerticalAlignment="Top" HorizontalAlignment="Center"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Foreground="#3AA1DB" Canvas.Left="740" Canvas.Top="367"/>
+            <ProgressBar Name="levelProgressBar" Minimum="0" Maximum="100" Foreground="#3AA1DB" Value="25"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="252" Height="15" Canvas.Left="689" Canvas.Top="405">
+                <ProgressBar.Effect>
+                    <DropShadowEffect Color="#3AA1DB" BlurRadius="30" Opacity="20" ShadowDepth="0" />
+                </ProgressBar.Effect>
+            </ProgressBar>
+
+            <Button Name="btn_buz" Content="Buzzer" Height="33" Width="96" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="260" Canvas.Top="555" Background="Transparent" Foreground="#3AA1DB" BorderBrush="#3AA1DB" Cursor="Hand"  Click="btn_buz_Click"/>
+
+            <Button Name="btn_rechts" Content="Rechts" Height="33" Width="96" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="845" Canvas.Top="555" Background="Transparent" Foreground="#3AA1DB" BorderBrush="#3AA1DB" Cursor="Hand"  Click="btn_rechts_Click"/>
+            <Button Name="btn_Links" Content="Links" Height="32" Width="96" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="590" Canvas.Top="556" Background="Transparent" Foreground="#3AA1DB" BorderBrush="#3AA1DB" Cursor="Hand"  Click="btn_Links_Click"/>
+            <Button Name="btn_Stop" Content="Stop" Height="33" Width="96" VerticalAlignment="Top" HorizontalAlignment="Left"  FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="15" Canvas.Left="716" Canvas.Top="555" Background="Transparent" Foreground="#3AA1DB" BorderBrush="#3AA1DB" Cursor="Hand"  Click="btn_Stop_Click"/>
+
+
+        </Canvas>
+
+        <Canvas Name="canvas_User_info" Background="#1A1C29" Margin="61,135,685,372" MouseLeave="canvas_User_info_MouseLeave" Visibility="Collapsed">
+            <Canvas.Effect>
+                <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
+            </Canvas.Effect>
+            <Label Name="user1" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB"/>
+            <Label Name="user2" Background="Transparent" Height="48" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="40"/>
+            <Label Name="user4" Background="Transparent" Height="40" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="100"/>
+            <Label Name="user5" Background="Transparent" Height="80" Width="428" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="111"/>
+            <Label Name="user6" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="137"/>
+            <Label Name="user3" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="52"/>
+            <Button Content="Log out" Background="Transparent" Height="46" Width="91" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="322" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="186" FontWeight="Bold" BorderThickness="0" Click="Button_Click"/>
+
+        </Canvas>
+
+
+
+
+
+
+
+    </Grid>
+</Window>
