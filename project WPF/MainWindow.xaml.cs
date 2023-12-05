@@ -60,7 +60,6 @@ namespace project
             user4.Content = gebruiker1.Geboortedatum;
             user5.Content = gebruiker1.Email;
             user6.Content = gebruiker1.Paswoord;
-
         }
 
         private void Username_LostFocus(object sender, RoutedEventArgs e)

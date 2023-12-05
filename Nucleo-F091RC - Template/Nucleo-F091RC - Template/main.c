@@ -62,6 +62,7 @@ int main(void)
 	// Oneindige lus starten.
 	while (1)
 	{	
+		GPIOC->ODR = GPIOC->ODR & ~GPIO_ODR_4;
 		if(SW1Active())
 		{
 			led = 1;	

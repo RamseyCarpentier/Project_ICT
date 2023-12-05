@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project\\project WPF\\project.csproj": {}
+    "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project-ICT\\project WPF\\project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project\\project WPF\\project.csproj": {
+    "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project-ICT\\project WPF\\project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project\\project WPF\\project.csproj",
+        "projectUniqueName": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project-ICT\\project WPF\\project.csproj",
         "projectName": "project",
-        "projectPath": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project\\project WPF\\project.csproj",
+        "projectPath": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project-ICT\\project WPF\\project.csproj",
         "packagesPath": "C:\\Users\\ramse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project\\project WPF\\obj\\",
+        "outputPath": "C:\\Users\\ramse\\OneDrive\\Bureaublad\\Project-ICT\\project WPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ramse\\AppData\\Roaming\\NuGet\\NuGet.Config",
