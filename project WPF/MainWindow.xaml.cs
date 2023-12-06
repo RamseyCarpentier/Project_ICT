@@ -116,7 +116,13 @@ namespace project
                     btn_aanmelden.Visibility = Visibility.Collapsed;
                     LijnA.Visibility = Visibility.Collapsed;
                     LijnI.Visibility = Visibility.Collapsed;
-                    lbl_naam.Content = username;
+
+                    lbl_naam.Content = userToLogin.Username;
+                    userV.Content = $"Voornaam: {userToLogin.FirstName}";
+                    userA.Content = $"Achternaam: {userToLogin.LastName}"; 
+                    userL.Content = $"Leeftijd: {userToLogin.Age}";
+                    userU.Content = $"Username: {userToLogin.Username}";
+                    userP.Content = $"Paswoord: {userToLogin.Pasword}";
                 }
                 else
                 {
@@ -156,6 +162,7 @@ namespace project
             if (value >= 120)
             {
                 i = 0;
+                value = 0;
                 canvas_load.Visibility = Visibility.Collapsed;
                 canvas_Start.Visibility = Visibility.Visible;
                 lbl_com.Visibility = Visibility.Visible;
@@ -234,9 +241,13 @@ namespace project
             camvas_Cntrols.Visibility= Visibility.Collapsed;
             canvas_User_info.Visibility = Visibility.Collapsed;
             canvas_load.Visibility = Visibility.Collapsed;
+            btn_inloggen.Visibility = Visibility.Visible;
+            btn_aanmelden.Visibility = Visibility.Visible;
+            LijnA.Visibility = Visibility.Collapsed;
+            LijnI.Visibility = Visibility.Visible;
 
 
-                
+
         }
 
         private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -279,9 +290,11 @@ namespace project
             txt_Password.Text = "Password";
             txt_Username.Text = "Username";
 
+
             btn_inloggen.Visibility = Visibility.Visible;
             btn_aanmelden.Visibility = Visibility.Visible;
-            LijnA.Visibility = Visibility.Visible;
+            canvas_Aanmelden.Visibility = Visibility.Collapsed;
+            LijnA.Visibility = Visibility.Collapsed;
             LijnI.Visibility = Visibility.Visible;
 
         }
@@ -521,7 +534,7 @@ namespace project
             MessageBox.Show("Uw bent aanmelding was succesvol");
 
 
-            //cmbx_gebruikers.Items.Add(nieuwObject.Username);
+            cmbx_gebruikers.Items.Add(nieuwObject.Username);
             txt_voornaam.Text = "";
             txt_achternaam.Text = "";
             txt_leeftijd.Text = "";

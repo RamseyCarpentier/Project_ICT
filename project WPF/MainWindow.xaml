@@ -8,8 +8,6 @@
         Title="MainWindow" Height="780" Width="1200" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid Background="#080808">
 
-
-
         <Canvas Name="canvas_load" Background="Transparent"  Visibility="Collapsed">
             <ProgressBar Height="35" Maximum="100" Minimum="0" Name="prsbar" Foreground="#3AA1DB" Canvas.Left="315" Canvas.Top="462" Width="570">
                 <ProgressBar.Effect>
@@ -118,6 +116,7 @@
 
 
 
+
         </Canvas>
 
         <Canvas Name="camvas_Cntrols" Visibility="Collapsed">
@@ -184,17 +183,22 @@
 
         </Canvas>
 
-        <Canvas Name="canvas_User_info" Background="#1A1C29" Margin="61,135,685,372" MouseLeave="canvas_User_info_MouseLeave" Visibility="Collapsed">
+        <Canvas Name="canvas_User_info" Background="#1A1C29" Margin="61,135,685,288" MouseLeave="canvas_User_info_MouseLeave" Visibility="Visible">
             <Canvas.Effect>
                 <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
             </Canvas.Effect>
-            <Label Name="user1" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB"/>
-            <Label Name="user2" Background="Transparent" Height="48" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="40"/>
-            <Label Name="user4" Background="Transparent" Height="40" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="100"/>
-            <Label Name="user5" Background="Transparent" Height="80" Width="428" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="111"/>
-            <Label Name="user6" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="137"/>
-            <Label Name="user3" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="52"/>
-            <Button Content="Log out" Background="Transparent" Height="46" Width="91" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="322" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="186" FontWeight="Bold" BorderThickness="0" Click="Button_Click"/>
+            <Label Name="userV" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Top" Foreground="#3AA1DB" Canvas.Top="30">Voornaam:</Label>
+            <Label Name="userA" Background="Transparent" Height="48" Width="370" VerticalAlignment="Center" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Top" Foreground="#3AA1DB" Canvas.Top="60">Achernaam:</Label>
+            <Label Name="userL" Background="Transparent" Height="40" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Top" Foreground="#3AA1DB" Canvas.Top="90">Leeftijd:</Label>
+            <Label Name="userU" Background="Transparent" Height="80" Width="428" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Top" Foreground="#3AA1DB" Canvas.Top="120">Username:</Label>
+            <Label Name="userP" Background="Transparent" Height="80" Width="370" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="30" FontSize="20" VerticalContentAlignment="Top" Foreground="#3AA1DB" Canvas.Top="150">Paswoord:</Label>
+
+
+            <Button Content="Log out" Background="Transparent" Height="46" Width="91" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="320" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="258" FontWeight="Bold" BorderThickness="0" Click="Button_Click"/>
+
+            <GroupBox Header="Gerbuikers" Canvas.Left="30" Canvas.Top="238" Foreground="#3AA1DB" FontSize="18">
+                <ComboBox Name="cmbx_gebruikers" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="30" Canvas.Top="281" Width="205"></ComboBox>
+            </GroupBox>
 
         </Canvas>
 
