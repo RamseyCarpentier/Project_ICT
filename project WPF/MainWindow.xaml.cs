@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using object_automatisch_aanmaken;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,8 +37,14 @@ namespace project
         public int i = 0;
         public int value = 0;
         DispatcherTimer timer = new DispatcherTimer();
-        Gebruiker gebruiker1 = new Gebruiker();
-     
+        private List<Gebruiker> objectList = new List<Gebruiker>();
+        string voornaam;
+        string achternaam;
+        string leeftijd;
+        string username;
+        string pasword;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -47,19 +54,7 @@ namespace project
             foreach (string s in SerialPort.GetPortNames())
                 cbxComPorts.Items.Add(s);
 
-            gebruiker1.Voornaam = "Voornaam: Ramsey";
-            gebruiker1.Achternaam = "Naam: Carpentier";
-            gebruiker1.Username = "Username: Ramsey_Carpentier";
-            gebruiker1.Geboortedatum = "Geboortedatum: 21/06/2005";
-            gebruiker1.Email = "E-mail: ramsey.carpentier@student.vives.be";
-            gebruiker1.Paswoord = "Paswoord: Vives123";
-
-            user2.Content = gebruiker1.Voornaam;
-            user1.Content = gebruiker1.Achternaam;
-            user3.Content = gebruiker1.Username;
-            user4.Content = gebruiker1.Geboortedatum;
-            user5.Content = gebruiker1.Email;
-            user6.Content = gebruiker1.Paswoord;
+            
         }
 
         private void Username_LostFocus(object sender, RoutedEventArgs e)
@@ -72,7 +67,6 @@ namespace project
 
         private void Username_GotFocus(object sender, RoutedEventArgs e)
         {
-            lbl_user_inc.Visibility = Visibility.Collapsed;
             if (txt_Username.Text == "Username")
             {
                 txt_Username.Text = "";
@@ -91,7 +85,7 @@ namespace project
 
         private void txt_Pasword_GotFocus(object sender, RoutedEventArgs e)
         {
-            lbl_pass_inc.Visibility = Visibility.Collapsed;
+          
             if (txt_Password.Text == "Password")
             {
                 txt_Password.Text = "";
@@ -100,36 +94,57 @@ namespace project
 
         private  void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            string username = txt_Username.Text;
-            string password = txt_Password.Text;
-            if ((username == "Ramsey_Carpentier" || username == "Thibobeer" || username == "Michel" || username == "Floflo") && password == "Vives123")
+            if (string.IsNullOrEmpty(txt_Username.Text))
             {
-                canvas_Inloggen.Visibility = Visibility.Collapsed;
-                
-                lbl_naam.Content = username;
+                MessageBox.Show("Vul uw gebruikernaam in.");
+                return;
+            }
+            string inputUsername = txt_Username.Text;
+            if (CheckUserExists(inputUsername))
+            {
+                lbl_Status.Visibility = Visibility.Collapsed;
+                string inputPassword = txt_Password.Text;
+                Gebruiker userToLogin = objectList.FirstOrDefault(gebruiker => gebruiker.Username.Equals(inputUsername, StringComparison.OrdinalIgnoreCase));
 
-                
-                timer.Interval = TimeSpan.FromMilliseconds(100);
-                timer.Tick += Timer_Tick;
-                timer.Start();
-
-
+                if (userToLogin != null && userToLogin.Pasword.Equals(inputPassword))
+                {
+                    canvas_Inloggen.Visibility = Visibility.Collapsed;
+                    timer.Interval = TimeSpan.FromMilliseconds(100);
+                    timer.Tick += Timer_Tick;
+                    timer.Start();
+                    btn_inloggen.Visibility = Visibility.Collapsed;
+                    btn_aanmelden.Visibility = Visibility.Collapsed;
+                    LijnA.Visibility = Visibility.Collapsed;
+                    LijnI.Visibility = Visibility.Collapsed;
+                    lbl_naam.Content = username;
+                }
+                else
+                {
+                    MessageBox.Show("Foutieve gebruikersnaam of wachtwoord.");
+                    return;
+                }
 
             }
+            else
+            {
+                lbl_Status.Visibility = Visibility.Visible;
+            }
+
 
             
 
-            else
-            {
-                if ((username != "Ramsey_Carpentier" && username != "Thibobeer" && username != "Michel" && username != "Floflo"))
-                    lbl_user_inc.Visibility = Visibility.Visible;
 
 
-                if (password != "Vives123")
-                    lbl_pass_inc.Visibility = Visibility.Visible;
-            }
+            
+
+     
 
 
+        }
+
+        private bool CheckUserExists(string username)
+        {
+            return objectList.Any(gebruiker => gebruiker.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -263,6 +278,12 @@ namespace project
             canvas_load.Visibility = Visibility.Collapsed;
             txt_Password.Text = "Password";
             txt_Username.Text = "Username";
+
+            btn_inloggen.Visibility = Visibility.Visible;
+            btn_aanmelden.Visibility = Visibility.Visible;
+            LijnA.Visibility = Visibility.Visible;
+            LijnI.Visibility = Visibility.Visible;
+
         }
 
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -440,5 +461,79 @@ namespace project
                 }
             }
         }
+
+        private void btn_inloggen_Click(object sender, RoutedEventArgs e)
+        {
+            LijnA.Visibility = Visibility.Collapsed;
+            LijnI.Visibility = Visibility.Visible;
+            canvas_Inloggen.Visibility = Visibility.Visible;
+            canvas_Aanmelden.Visibility = Visibility.Collapsed;
+            txt_Username.Text = "Username";
+            txt_Password.Text = "Password";
+        }
+
+        private void btn_aanmelden_Click(object sender, RoutedEventArgs e)
+        {
+            LijnA.Visibility = Visibility.Visible;
+            LijnI.Visibility = Visibility.Collapsed;
+            canvas_Inloggen.Visibility = Visibility.Collapsed;
+            canvas_Aanmelden.Visibility = Visibility.Visible;
+        }
+
+        private void btn_singUP_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_voornaam.Text) || string.IsNullOrEmpty(txt_achternaam.Text) || string.IsNullOrEmpty(txt_leeftijd.Text) || string.IsNullOrEmpty(txt_username.Text) || string.IsNullOrEmpty(txt_pasword.Text))
+            {
+                MessageBox.Show("Vul alle velden in AUB.");
+                return; // Stop met verder verwerken als de TextBox leeg is
+
+            }
+            int age;
+
+            if (!int.TryParse(txt_leeftijd.Text, out age))
+            {
+                MessageBox.Show("Voer alstublieft een geldig getal in voor leeftijd.");
+                return; // Stop met verder verwerken als de ingevoerde waarde geen geldig getal is
+            }
+
+            if (age < 0 || age > 100)
+            {
+                MessageBox.Show("Leeftijd moet tussen 0 en 100 liggen.");
+                return; // Stop met verder verwerken als de leeftijd buiten het gewenste bereik ligt
+            }
+
+
+            voornaam = txt_voornaam.Text;
+            achternaam = txt_achternaam.Text;
+            leeftijd = txt_leeftijd.Text;
+            username = txt_username.Text;
+            pasword = txt_pasword.Text;
+
+            if (CheckUsernameExists(username))
+            {
+                MessageBox.Show("Deze gebruikersnaam bestaat al.");
+                return; // Stop met het maken van het object als de gebruikersnaam al bestaat
+            }
+
+            Gebruiker nieuwObject = new Gebruiker(voornaam, achternaam, leeftijd, pasword, username);
+            objectList.Add(nieuwObject);
+
+            MessageBox.Show("Uw bent aanmelding was succesvol");
+
+
+            //cmbx_gebruikers.Items.Add(nieuwObject.Username);
+            txt_voornaam.Text = "";
+            txt_achternaam.Text = "";
+            txt_leeftijd.Text = "";
+            txt_username.Text = "";
+            txt_pasword.Text = "";
+        }
+
+        private bool CheckUsernameExists(string username)
+        {
+            return objectList.Any(gebruiker => gebruiker.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+        }
+
+    
     }    
 }

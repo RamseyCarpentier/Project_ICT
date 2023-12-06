@@ -101,9 +101,9 @@ int main(void)
 			
 			if (receivedByte >= 128)
 			{
-				GPIOC->ODR = GPIOC->ODR | GPIO_ODR_4;
-				WaitForMs(500);
-				GPIOC->ODR = GPIOC->ODR & ~GPIO_ODR_4;
+				GPIOC->ODR = GPIOC->ODR | GPIO_ODR_4;  // PC2 inschakelen
+				WaitForMs(200);                        // wacht 200 ms
+				GPIOC->ODR = GPIOC->ODR & ~GPIO_ODR_4; // PC2 uitschakelen
 				ByteToLeds(receivedByte);
 				
 			}
@@ -126,10 +126,6 @@ int main(void)
           GPIOC->ODR = GPIOC->ODR & ~GPIO_ODR_3;		// PC3 uitschakelen  
 		      GPIOC->ODR = GPIOC->ODR & ~GPIO_ODR_2;    // PC2 uitschakelen  
 			}
-			
-			
-			
-			
 		}
 		
 		WaitForMs(100);

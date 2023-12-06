@@ -20,32 +20,17 @@
             <Label  Name="lbl_loading" Foreground="#3AA1DB" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="ROG Fonts" Canvas.Left="434" Canvas.Top="347">Loading...</Label>
         </Canvas>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <Canvas Name="canvas_Inloggen" Width="550" Background="#20FFFFFF" Visibility="Collapsed" Margin="325,182,325,176" >
             <Canvas.Effect>
                 <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
             </Canvas.Effect>
 
-            <Label Content="Inloggen" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="220" Canvas.Top="37" HorizontalAlignment="Center" VerticalAlignment="Top" ></Label>
             <TextBox Name="txt_Username" Text="Username" FontSize="18" Background="Transparent" Foreground="LightGray" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"  GotFocus="Username_GotFocus" LostFocus="Username_LostFocus" Canvas.Left="106" Canvas.Top="126" CaretBrush="#445DAD"/>
             <TextBox Name="txt_Password" Text="Password" FontSize="18" Background="Transparent" Foreground="LightGray" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Center"  GotFocus="txt_Pasword_GotFocus" LostFocus="txt_Pasword_LostFocus" Canvas.Left="106" Canvas.Top="169" CaretBrush="#445DAD" />
             <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="106" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Center" Width="350" />
             <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="106" Canvas.Top="195" HorizontalAlignment="Left" VerticalAlignment="Center" Width="350" />
 
-            <Button  Background="Transparent" Foreground="DarkGray" Canvas.Left="227" Canvas.Top="280"  HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Cursor="Hand"/>
+
 
             <Button  Name="btn_submit" Content="Login"  Foreground="LightGray" Background="#445DAD" FontSize="20" FontFamily="Britannic Bold" Canvas.Left="237" Canvas.Top="257" BorderThickness="1" Height="35" Width="75" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#445DAD" Click="btn_submit_Click">
                 <Button.Resources>
@@ -57,35 +42,57 @@
 
             <Label  Content="| Designed by Ramsey Carpentier |" Canvas.Left="157" Canvas.Top="344" Foreground="LightGray" FontFamily="Bernard MT Condensed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="17"></Label>
 
-            <Label  Name="lbl_user_inc" Content="Username is incorect" Canvas.Left="338" Canvas.Top="129" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed"></Label>
-            <Label  Name="lbl_pass_inc" Content="Password is incorect" Canvas.Left="340" Canvas.Top="171" Foreground="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"></Label>
+
+            <Label Name="lbl_Status" Content="!Deze gebruikersnaam bestaat niet.!" Canvas.Left="152" Canvas.Top="203" Visibility="Collapsed" Foreground="#3AA1DB" FontSize="15" ></Label>
+
+
+        </Canvas>
+
+        <Canvas Name="canvas_Aanmelden" Width="550" Background="#20FFFFFF" Visibility="Collapsed" Margin="325,182,325,176" >
+            <Canvas.Effect>
+                <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
+            </Canvas.Effect>
+
+
+
+
+            <Button  Name="btn_singUP" Content="Aanmelden"  Foreground="LightGray" Background="#445DAD" FontSize="20" FontFamily="Britannic Bold" Canvas.Left="212" Canvas.Top="286" BorderThickness="1" Height="35" Width="126" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#445DAD" Click="btn_singUP_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Label  Content="| Designed by Ramsey Carpentier |" Canvas.Left="157" Canvas.Top="344" Foreground="LightGray" FontFamily="Bernard MT Condensed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="17"></Label>
+
+            <Label Content="Voornaam:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="157" Canvas.Top="105" Foreground="LightGray"  FontSize="16"/>
+            <Label Content="Achternaam:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="157" Canvas.Top="135"  Foreground="LightGray" FontSize="16"/>
+            <Label Content="Leeftijd:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="157" Canvas.Top="165"  Foreground="LightGray" FontSize="16"/>
+            <Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="158" Canvas.Top="195"  Foreground="LightGray" FontSize="16"/>
+            <Label Content="Pasword:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="157" Canvas.Top="225"  Foreground="LightGray" FontSize="16" />
+
+            <TextBox Name="txt_voornaam" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="279,112,0,0" BorderThickness="0" Background="Transparent" CaretBrush="#445DAD" Foreground="LightGray" FontSize="16"></TextBox>
+            <TextBox Name="txt_achternaam" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Margin="279,142,0,0" BorderThickness="0" Background="Transparent" CaretBrush="#445DAD" Foreground="LightGray" FontSize="16"></TextBox>
+            <TextBox Name="txt_leeftijd" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Margin="279,172,0,0" BorderThickness="0" Background="Transparent" CaretBrush="#445DAD"  Foreground="LightGray" FontSize="16"/>
+            <TextBox Name="txt_username" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Margin="279,202,0,0" BorderThickness="0" Background="Transparent" CaretBrush="#445DAD" Foreground="LightGray" FontSize="16"></TextBox>
+            <TextBox Name="txt_pasword" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="279,232,0,0" BorderThickness="0" Background="Transparent" CaretBrush="#445DAD"  Foreground="LightGray" FontSize="16"/>
+
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="279" Canvas.Top="133" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="279" Canvas.Top="163" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="279" Canvas.Top="193" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="279" Canvas.Top="223" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" />
+            <Line X1="0" Y1="0" X2="400" Y2="0" Stroke="LightGray" StrokeThickness="1.5" Canvas.Left="279" Canvas.Top="253" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" />
 
 
 
         </Canvas>
 
+        <Button Name="btn_inloggen" Content="Inloggen" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="145" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Margin="492,215,0,0" Click="btn_inloggen_Click" Cursor="Hand" Visibility="Collapsed"></Button>
+        <Button Name="btn_aanmelden" Content="Aanmelden" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="264" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Margin="612,215,0,0" Click="btn_aanmelden_Click" Cursor="Hand" Visibility="Collapsed"></Button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <Line Name="LijnA" X1="0" Y1="50" X2="125" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="264" Canvas.Top="21" Margin="612,200,-612,-200"/>
+        <Line Name="LijnI" X1="0" Y1="50" X2="100" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="145" Canvas.Top="21" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="492,200,0,0"/>
 
         <Canvas Name="canvas_Start" Background="Transparent" Visibility="Visible" >
             <Label Name="lbl_start1" Background="#1A1C29" Height="100" Width="1124" HorizontalAlignment="Left" Canvas.Top="32" VerticalAlignment="Center" Canvas.Left="38">
@@ -113,7 +120,7 @@
 
         </Canvas>
 
-        <Canvas Name="camvas_Cntrols" Visibility="Visible">
+        <Canvas Name="camvas_Cntrols" Visibility="Collapsed">
 
             <TextBox Text="Control Panel" FontSize="35" FontFamily="Bodoni MT" FontStyle="Italic" VerticalAlignment="Top" HorizontalAlignment="Center" TextDecorations="Underline" BorderThickness="0" Canvas.Left="160" Canvas.Top="174" Background="Transparent" Foreground="#3AA1DB"/>
 
@@ -190,12 +197,6 @@
             <Button Content="Log out" Background="Transparent" Height="46" Width="91" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="322" FontSize="20" VerticalContentAlignment="Center" Foreground="#3AA1DB" Canvas.Top="186" FontWeight="Bold" BorderThickness="0" Click="Button_Click"/>
 
         </Canvas>
-
-
-
-
-
-
 
     </Grid>
 </Window>
