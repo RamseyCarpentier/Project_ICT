@@ -16,12 +16,14 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static System.Net.Mime.MediaTypeNames;
-
+using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
 
 namespace project
 {
@@ -67,6 +69,8 @@ namespace project
 
         private void Username_GotFocus(object sender, RoutedEventArgs e)
         {
+            lbl_Status.Visibility = Visibility.Collapsed;
+            
             if (txt_Username.Text == "Username")
             {
                 txt_Username.Text = "";
@@ -94,7 +98,7 @@ namespace project
 
         private  void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_Username.Text))
+            if (txt_Username.Text == "Username")
             {
                 MessageBox.Show("Vul uw gebruikernaam in.");
                 return;
@@ -126,7 +130,7 @@ namespace project
                 }
                 else
                 {
-                    MessageBox.Show("Foutieve gebruikersnaam of wachtwoord.");
+                    MessageBox.Show("Foutieve wachtwoord.");
                     return;
                 }
 
@@ -135,17 +139,6 @@ namespace project
             {
                 lbl_Status.Visibility = Visibility.Visible;
             }
-
-
-            
-
-
-
-            
-
-     
-
-
         }
 
         private bool CheckUserExists(string username)
@@ -246,7 +239,9 @@ namespace project
             LijnA.Visibility = Visibility.Collapsed;
             LijnI.Visibility = Visibility.Visible;
 
-
+            Color myColor = (Color)ColorConverter.ConvertFromString("#3AA1DB"); 
+            BorderBrush = new SolidColorBrush(myColor);
+            BorderThickness = new Thickness(2);
 
         }
 
@@ -296,6 +291,15 @@ namespace project
             canvas_Aanmelden.Visibility = Visibility.Collapsed;
             LijnA.Visibility = Visibility.Collapsed;
             LijnI.Visibility = Visibility.Visible;
+
+            txt_voornaam.Text = "";
+            txt_achternaam.Text = "";
+            txt_leeftijd.Text = "";
+            txt_username.Text = "";
+            txt_pasword.Text = "";
+
+            lbl_com.Visibility = Visibility.Visible;
+            cbxComPorts.SelectedItem = "None";
 
         }
 
@@ -461,12 +465,10 @@ namespace project
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
                     bitmap.UriSource = new Uri(imagePath);
-                    bitmap.DecodePixelHeight = 80; 
-                    bitmap.DecodePixelWidth = 80; 
                     bitmap.EndInit();
 
-                    
-                    lbl_start2.Source = bitmap;
+
+                    imageBrush.ImageSource = bitmap;
                 }
                 catch (Exception ex)
                 {
@@ -477,6 +479,7 @@ namespace project
 
         private void btn_inloggen_Click(object sender, RoutedEventArgs e)
         {
+            lbl_Status.Visibility = Visibility.Collapsed;
             LijnA.Visibility = Visibility.Collapsed;
             LijnI.Visibility = Visibility.Visible;
             canvas_Inloggen.Visibility = Visibility.Visible;
@@ -491,6 +494,12 @@ namespace project
             LijnI.Visibility = Visibility.Collapsed;
             canvas_Inloggen.Visibility = Visibility.Collapsed;
             canvas_Aanmelden.Visibility = Visibility.Visible;
+
+            txt_voornaam.Text = "";
+            txt_achternaam.Text = "";
+            txt_leeftijd.Text = "";
+            txt_username.Text = "";
+            txt_pasword.Text = "";
         }
 
         private void btn_singUP_Click(object sender, RoutedEventArgs e)
@@ -522,7 +531,7 @@ namespace project
             username = txt_username.Text;
             pasword = txt_pasword.Text;
 
-            if (CheckUsernameExists(username))
+            if (CheckUsernameExists(username) || txt_username.Text == "Username")
             {
                 MessageBox.Show("Deze gebruikersnaam bestaat al.");
                 return; // Stop met het maken van het object als de gebruikersnaam al bestaat
@@ -546,6 +555,8 @@ namespace project
         {
             return objectList.Any(gebruiker => gebruiker.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
         }
+
+
 
     
     }    

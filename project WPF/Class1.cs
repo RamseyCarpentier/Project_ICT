@@ -22,10 +22,5 @@ namespace object_automatisch_aanmaken
             Username = username;
             Pasword = paswoord;
         }
-
-        public void ShowUser(string gebruiker)
-        {
-
-        }
     }
 }

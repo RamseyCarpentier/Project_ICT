@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="780" Width="1200" Closing="Window_Closing" Loaded="Window_Loaded">
+        Title="Project ICT" Height="780" Width="1200" Closing="Window_Closing" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Grid Background="#080808">
 
-        <Canvas Name="canvas_load" Background="Transparent"  Visibility="Collapsed">
-            <ProgressBar Height="35" Maximum="100" Minimum="0" Name="prsbar" Foreground="#3AA1DB" Canvas.Left="315" Canvas.Top="462" Width="570">
+        <Canvas Name="canvas_load" Background="Transparent"  Visibility="Visible">
+            <ProgressBar Height="35" Maximum="100" Minimum="0" Name="prsbar" Foreground="#3AA1DB" Canvas.Left="315" Canvas.Top="347" Width="570" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <ProgressBar.Effect>
                     <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
                 </ProgressBar.Effect>
             </ProgressBar>
-            <Label Name="lbl_prsbr" Foreground="#3AA1DB" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ROG Fonts" Canvas.Left="570" Canvas.Top="531">0%</Label>
-            <Label  Name="lbl_loading" Foreground="#3AA1DB" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="ROG Fonts" Canvas.Left="434" Canvas.Top="347">Loading...</Label>
+            <Label Name="lbl_prsbr" Foreground="#3AA1DB" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="ROG Fonts" Canvas.Left="570" Canvas.Top="418">0%</Label>
+            <Label  Name="lbl_loading" Foreground="#3AA1DB" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ROG Fonts" Canvas.Left="434" Canvas.Top="236">Loading...</Label>
         </Canvas>
 
         <Canvas Name="canvas_Inloggen" Width="550" Background="#20FFFFFF" Visibility="Collapsed" Margin="325,182,325,176" >
@@ -92,14 +92,19 @@
         <Line Name="LijnA" X1="0" Y1="50" X2="125" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="264" Canvas.Top="21" Margin="612,200,-612,-200"/>
         <Line Name="LijnI" X1="0" Y1="50" X2="100" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="145" Canvas.Top="21" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="492,200,0,0"/>
 
-        <Canvas Name="canvas_Start" Background="Transparent" Visibility="Visible" >
+        <Canvas Name="canvas_Start" Background="Transparent" Visibility="Collapsed" >
             <Label Name="lbl_start1" Background="#1A1C29" Height="100" Width="1124" HorizontalAlignment="Left" Canvas.Top="32" VerticalAlignment="Center" Canvas.Left="38">
                 <Label.Effect>
                     <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
                 </Label.Effect>
             </Label>
 
-            <Image Name="lbl_start2" Source="/image/profiel_icoon.png" Stretch="Fill" Visibility="Visible" Height ="80" HorizontalAlignment="Left" Canvas.Left="70" Canvas.Top="42" VerticalAlignment="Center" />
+            <Ellipse Width="80" Height="80" Canvas.Left="75" Canvas.Top="43" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="imageBrush" ImageSource="/image/profiel_icoon.png" />
+                </Ellipse.Fill>
+            </Ellipse>
+
 
             <Label Name="lbl_naam" Background="Transparent" Height="80" Width="500" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="205" Foreground="LightGray" FontSize="34" Canvas.Top="43" VerticalContentAlignment="Center">Name</Label>
 
@@ -183,7 +188,7 @@
 
         </Canvas>
 
-        <Canvas Name="canvas_User_info" Background="#1A1C29" Margin="61,135,685,288" MouseLeave="canvas_User_info_MouseLeave" Visibility="Visible">
+        <Canvas Name="canvas_User_info" Background="#1A1C29" Margin="61,135,685,288" MouseLeave="canvas_User_info_MouseLeave" Visibility="Collapsed">
             <Canvas.Effect>
                 <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
             </Canvas.Effect>
