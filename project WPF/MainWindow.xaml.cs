@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,7 @@ namespace project
         private byte data = 0b00000000;
         public int i = 0;
         public int value = 0;
+        public int count = 0;
         DispatcherTimer timer = new DispatcherTimer();
         private List<Gebruiker> objectList = new List<Gebruiker>();
         string voornaam;
@@ -45,6 +47,8 @@ namespace project
         string leeftijd;
         string username;
         string pasword;
+        DispatcherTimer timer2 = new DispatcherTimer();
+        bool load = false;
 
 
         public MainWindow()
@@ -55,8 +59,9 @@ namespace project
             cbxComPorts.Items.Add("None");
             foreach (string s in SerialPort.GetPortNames())
                 cbxComPorts.Items.Add(s);
+            StartTimer2();
 
-            
+
         }
 
         private void Username_LostFocus(object sender, RoutedEventArgs e)
@@ -70,7 +75,7 @@ namespace project
         private void Username_GotFocus(object sender, RoutedEventArgs e)
         {
             lbl_Status.Visibility = Visibility.Collapsed;
-            
+
             if (txt_Username.Text == "Username")
             {
                 txt_Username.Text = "";
@@ -89,15 +94,16 @@ namespace project
 
         private void txt_Pasword_GotFocus(object sender, RoutedEventArgs e)
         {
-          
+
             if (txt_Password.Text == "Password")
             {
                 txt_Password.Text = "";
             }
         }
 
-        private  void btn_submit_Click(object sender, RoutedEventArgs e)
+        private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
+            load = false;
             if (txt_Username.Text == "Username")
             {
                 MessageBox.Show("Vul uw gebruikernaam in.");
@@ -113,6 +119,8 @@ namespace project
                 if (userToLogin != null && userToLogin.Pasword.Equals(inputPassword))
                 {
                     canvas_Inloggen.Visibility = Visibility.Collapsed;
+                    i = 0;
+                    value =0;
                     timer.Interval = TimeSpan.FromMilliseconds(100);
                     timer.Tick += Timer_Tick;
                     timer.Start();
@@ -123,7 +131,7 @@ namespace project
 
                     lbl_naam.Content = userToLogin.Username;
                     userV.Content = $"Voornaam: {userToLogin.FirstName}";
-                    userA.Content = $"Achternaam: {userToLogin.LastName}"; 
+                    userA.Content = $"Achternaam: {userToLogin.LastName}";
                     userL.Content = $"Leeftijd: {userToLogin.Age}";
                     userU.Content = $"Username: {userToLogin.Username}";
                     userP.Content = $"Paswoord: {userToLogin.Pasword}";
@@ -160,9 +168,28 @@ namespace project
                 canvas_Start.Visibility = Visibility.Visible;
                 lbl_com.Visibility = Visibility.Visible;
                 timer.Stop();
-                Thread.Sleep(1000);
+                load = true;
             }
+            
+
+            if (load == true)
+            {
+                i = 0;
+                value = 0;
+                count ++;
+                canvas_load.Visibility = Visibility.Collapsed;
+                canvas_Start.Visibility = Visibility.Visible;
+                lbl_com.Content = 
+                lbl_com.Visibility = Visibility.Visible;
+                timer.Stop();
+                
+
+            }
+            
         }
+
+       
+        
 
         private void cbxComPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -207,6 +234,7 @@ namespace project
 
         private void ComboBox_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            canvas_load.Visibility = Visibility.Collapsed;
             foreach (string s in SerialPort.GetPortNames())
             {
                 if (!cbxComPorts.Items.Contains(s))
@@ -556,8 +584,22 @@ namespace project
             return objectList.Any(gebruiker => gebruiker.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
         }
 
+        private void StartTimer2()
+        {
+            timer2.Interval = TimeSpan.FromSeconds(1);
+
+            timer2.Tick += Timer_Tick2;
+            timer2.Start();
+        }
+        private void Timer_Tick2(object sender, EventArgs e)
+        {
+            DateTime currentTime = DateTime.Now;
+            CultureInfo culture = new CultureInfo("nl-NL"); // Specificeer Nederlands (Nederland) cultuurinfo voor Europese notatie
+
+            string formattedDateTime = currentTime.ToString("dd/MM/yyyy HH:mm:ss", culture);
+            lbl_time.Content = formattedDateTime;
+        }
 
 
-    
     }    
 }

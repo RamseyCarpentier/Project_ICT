@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
         Title="Project ICT" Height="780" Width="1200" Closing="Window_Closing" Loaded="Window_Loaded" ResizeMode="NoResize">
-    <Grid Background="#080808">
+    <Grid Background="#090609">
 
-        <Canvas Name="canvas_load" Background="Transparent"  Visibility="Visible">
+        <Label Name="lbl_time" Content="..." Canvas.Left="871" Canvas.Top="698"  FontSize="19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="275" Foreground="#4D8BE3" Margin="884,688,0,0"/>
+
+        <Canvas Name="canvas_load" Background="Transparent"  Visibility="Collapsed">
             <ProgressBar Height="35" Maximum="100" Minimum="0" Name="prsbar" Foreground="#3AA1DB" Canvas.Left="315" Canvas.Top="347" Width="570" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <ProgressBar.Effect>
                     <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
@@ -18,7 +20,7 @@
             <Label  Name="lbl_loading" Foreground="#3AA1DB" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="ROG Fonts" Canvas.Left="434" Canvas.Top="236">Loading...</Label>
         </Canvas>
 
-        <Canvas Name="canvas_Inloggen" Width="550" Background="#20FFFFFF" Visibility="Collapsed" Margin="325,182,325,176" >
+        <Canvas Name="canvas_Inloggen" Width="550" Background="#20FFFFFF" Visibility="Visible" Margin="325,182,325,176" >
             <Canvas.Effect>
                 <DropShadowEffect Color="#3AA1DB" BlurRadius="100" Opacity="20" ShadowDepth="0" />
             </Canvas.Effect>
@@ -89,8 +91,8 @@
         <Button Name="btn_inloggen" Content="Inloggen" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="145" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Margin="492,215,0,0" Click="btn_inloggen_Click" Cursor="Hand" Visibility="Collapsed"></Button>
         <Button Name="btn_aanmelden" Content="Aanmelden" FontSize="26" Foreground="LightGray" FontFamily="Britannic Bold" Canvas.Left="264" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Margin="612,215,0,0" Click="btn_aanmelden_Click" Cursor="Hand" Visibility="Collapsed"></Button>
 
-        <Line Name="LijnA" X1="0" Y1="50" X2="125" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="264" Canvas.Top="21" Margin="612,200,-612,-200"/>
-        <Line Name="LijnI" X1="0" Y1="50" X2="100" Y2="50" Stroke="#3AA1DB" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="145" Canvas.Top="21" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="492,200,0,0"/>
+        <Line Name="LijnA" X1="0" Y1="50" X2="125" Y2="50" Stroke="#4D8BE3" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="264" Canvas.Top="21" Margin="612,200,-612,-200"></Line>
+        <Line Name="LijnI" X1="0" Y1="50" X2="100" Y2="50" Stroke="#4D8BE3" StrokeThickness="3" Visibility="Collapsed" Canvas.Left="145" Canvas.Top="21" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="492,200,0,0"/>
 
         <Canvas Name="canvas_Start" Background="Transparent" Visibility="Collapsed" >
             <Label Name="lbl_start1" Background="#1A1C29" Height="100" Width="1124" HorizontalAlignment="Left" Canvas.Top="32" VerticalAlignment="Center" Canvas.Left="38">
@@ -115,6 +117,7 @@
             <Label  Name="lbl_start4" Height="50" Width="50" Foreground="LightGray" Background="Transparent" BorderThickness="0" Content="ℹ️" FontSize="30" Canvas.Left="155" Canvas.Top="58" MouseEnter="Label_MouseEnter"></Label>
 
             <Button Name="btn_change_icoon" Height="30" Width="30" Foreground="LightGray" Background="Transparent" BorderThickness="0" Content="✏️" VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="59" Canvas.Top="92" Click="btn_change_icoon_Click"></Button>
+
 
 
 
