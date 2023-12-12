@@ -433,10 +433,19 @@ namespace project
 
         private void _serialPort_DataSend(byte leds)
         {
-           
-            Debug.WriteLine(leds);
-            _serialPort.Write(new byte[] { leds}, 0, 1);
+            if (_serialPort.IsOpen)
+            {
+                Debug.WriteLine(leds);
+                _serialPort.Write(new byte[] { leds }, 0, 1);
+            }
 
+            else
+            {
+                camvas_Cntrols.Visibility = Visibility.Collapsed;
+                lbl_com.Content = $"Deze COM-Poort is niet beschikbaar! ";
+                lbl_com.Visibility = Visibility.Visible;
+            }
+            
         }
 
         private void btn_buz_Click(object sender, RoutedEventArgs e)
