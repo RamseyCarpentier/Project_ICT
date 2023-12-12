@@ -135,6 +135,7 @@ namespace project
                     userL.Content = $"Leeftijd: {userToLogin.Age}";
                     userU.Content = $"Username: {userToLogin.Username}";
                     userP.Content = $"Paswoord: {userToLogin.Pasword}";
+                    lbl_com.Content = "!Selecteer een COM-Poort!";
                 }
                 else
                 {
@@ -179,17 +180,13 @@ namespace project
                 count ++;
                 canvas_load.Visibility = Visibility.Collapsed;
                 canvas_Start.Visibility = Visibility.Visible;
-                lbl_com.Content = 
                 lbl_com.Visibility = Visibility.Visible;
                 timer.Stop();
                 
 
             }
             
-        }
-
-       
-        
+        } 
 
         private void cbxComPorts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -439,7 +436,6 @@ namespace project
            
             Debug.WriteLine(leds);
             _serialPort.Write(new byte[] { leds}, 0, 1);
-            
 
         }
 
